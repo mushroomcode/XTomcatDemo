@@ -1,1 +1,51 @@
-GET 0.0.0.0:9200/posts
+#GET 0.0.0.0:9200/accounts/person/1?pretty=true
+#Accept: application/json
+
+###
+###
+###
+#GET 0.0.0.0:9200/posts
+#Accept: application/json
+#
+####
+#GET 0.0.0.0:9200/posts/_mapping?pretty=true
+#Accept: application/json
+
+#GET 0.0.0.0:9200/_mapping?pretty=true
+#Accept: application/json
+
+#GET 0.0.0.0:9200/_cat/indices?v
+#
+#PUT 0.0.0.0:9200/weather
+#Accept: application/json
+#
+// 删除weather 语句
+#DELETE 0.0.0.0:9200/weather
+
+#PUT 0.0.0.0:9200/accounts
+#GET 0.0.0.0:9200/accounts
+
+#PUT 0.0.0.0:9200/accounts/person/1 -d {"user": "张三",
+#  "title": "工程师",
+#  "desc": "数据库管理" }
+
+#POST 0.0.0.0:9200/accounts/person/1
+#Content-Type: application/json
+#
+#{
+#  "user": "张三",
+#  "title": "工程师",
+#  "desc": "数据库管理"
+#}
+
+GET 0.0.0.0:9200/accounts/person/_search
+Content-Type: application/json
+
+{
+  "query": { "match" : {"desc" : "数据 工程师 张三"} },
+  "size" : 1
+}
+
+
+
+
